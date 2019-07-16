@@ -6,24 +6,16 @@ class String;
 class Double;
 class Int {
 private: long $mainInteger;
-		 long $intInteger;
+	 long $intInteger;
 public:
 	Int() {}
 	Int(long $intInteger) {
 		$mainInteger = $intInteger;
 		this->$intInteger = $intInteger;
 	}
-	long toLong() {
-		return $mainInteger;
-	}
-	void debug() {
-		std::cout << $mainInteger;
-	}
-	bool isEqual(long $x) {
-		if ($intInteger == $x)
-			return true;
-		return false;
-	}
+	long toLong() {return $mainInteger;	}
+	void debug() { std::cout << $mainInteger;}
+	bool isEqual(long $x) { return ($intInteger == $x) ? true : false; }
 	String toString();
 };
 class String {
@@ -31,9 +23,7 @@ private: std::string $mainString;
 public:
 		String() {}
 		template <class $dataType>
-		String($dataType $charString) {
-			$mainString = $charString; 
-		}
+		String($dataType $charString) {$mainString = $charString; }
 public:	int length() {
 		int $count = 0;
 			while( $mainString[$count] != '\0') {
@@ -41,9 +31,7 @@ public:	int length() {
 			}
 			return $count;
 		}
-		std::string toString() {
-			return $mainString;
-		}
+		std::string toString() {return $mainString;}
 		void debug() {std::cout << $mainString;}
 		bool startsWith(String $prefix) {
 		int $number_char = $prefix.length();
@@ -71,9 +59,7 @@ public:	int length() {
 			return -1;
 		}
 
-		std::string toStdString() {
-			return $mainString;
-		}
+		std::string toStdString() { return $mainString;}
 		/*bool replace(String $needle) {
 			std::string $charNeedle = $needle.toString();
 			for (long $i = 0; $i < $mainString.length(); $i++) {
@@ -82,18 +68,12 @@ public:	int length() {
 			}
 		}*/
 };
-
-String Int::toString() {
-	return  std::to_string(Int::$mainInteger);
-}
-
+String Int::toString() { return  std::to_string(Int::$mainInteger);}
 class Double {};
-
 class Array {
 	std::map <int, Int> $integer;
 	std::map <int, String> $string;
 	size_t $key = 0;
-	
 public:	
 		Array() {}
 		template <typename $dataType>
