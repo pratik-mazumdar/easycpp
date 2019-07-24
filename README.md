@@ -1,14 +1,21 @@
-#Missions
+# Missions<br>
 As C++ grows old it need to be updated in a morden way.<br>
-## Having data types as less as possible
+## Non-Premitive DataTypes
   *String<br>
   *Int<br>
-  *Double<br>
-## Multiple datatype array
-STL sure contains list,map,vector but still C++ is lacking multiple datatype array. So here it is,<br>
+  *Double<br>  
+## Multiple datatype array 
+### Creating dynamic array with multiple datatypes in it
 ~~~
 Array y = {50,70,"ram"};
-String x = y.getValue<String>(2); // x now contains "ram"
-x.debug(); // Will output "ram"
 ~~~
-Double and float are yet to be added.
+### Get the value by position
+~~~
+std::string x = y.getValue<std::string>(2); // x now contains "ram"
+std::cout<< x;
+
+//OR USE
+
+String x =  x = y.getValue<String>(2); // x now contains "ram"
+x.debug();
+~~~
