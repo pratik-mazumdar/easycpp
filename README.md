@@ -1,7 +1,7 @@
 ## Overview<br>
 Creating dynamic array with multiple datatypes in it. Better and simpler than tupple.<br>
 Adding more functionality to primitive datatypes. As C++ grows old it need to be updated in a morden way.<br>
-[Array](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
+[Array](https://github.com/LUCIF680/Nile#array)<br>
 [String](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
 [Int](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
 [Double](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
