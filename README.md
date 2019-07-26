@@ -1,14 +1,12 @@
 ## Overview<br>
 Creating dynamic array with multiple datatypes in it. Better and simpler than tupple.<br>
 Adding more functionality to primitive datatypes. As C++ grows old it need to be updated in a morden way.<br>
-[Array](https://github.com/LUCIF680/Nile/edit/master/README.md#array)
 ### How to download 
 Header only Library. Download the file from [here](https://lucif680.github.io/Nile/nile.h).
 ## Non-Premitive DataTypes
   *String<br>
   *Int<br>
   *Double<br>  
-  <section id="array">
 ## Multiple datatype array 
 #### Creating dynamic array with multiple datatypes in it
 ~~~
