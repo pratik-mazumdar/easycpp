@@ -52,7 +52,7 @@ y.push(65.4);
 // y = {50,70,"ram","hello",65.4}
 ~~~
 Add an element at the end of the array.
-</section>
+
 ## String 
 In process to create it UTF-8 support.
 
