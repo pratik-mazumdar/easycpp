@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <map>
+#define _NULL -1
 class String;
 class Double {
 	long double $maindouble;
@@ -33,10 +34,10 @@ public:
 	Int reverse() {
 		long $num = $mainInteger;
 		long new_num = 0;
-		while ($num > 0){
+		while ($num > 0) {
 			new_num = new_num * 10 + ($num % 10);
 			$num = $num / 10;
-			
+
 		}
 		return new_num;
 	}
@@ -59,6 +60,14 @@ public:
 	template <class $dataType>
 	String($dataType $charString) { $mainString = $charString; }
 public:
+	Int parseInt() {return std::stoi($mainString);	}
+	bool isInt() { 
+		try {
+			std::stoi($mainString);
+			return true;
+		}
+		catch (...) {return false;}
+	}
 	String operator + (String const& obj) { return  $mainString + obj.$mainString; }
 	bool operator == (String const& obj) { return $mainString == obj.$mainString; }
 	bool compareIgnoreCase(String $obj) {
@@ -69,10 +78,6 @@ public:
 		while ($mainString[$count] != '\0') { $count++; }
 		return $count;
 	}
-	/*void toLower() {
-		icu::UnicodeString someUString($mainString.c_str(), "ISO-8859-1");
-		std::cout << someUString.toLower();
-	}*/
 	void debug() { std::cout << $mainString; }
 	bool startsWith(String $prefix) {
 		size_t $number_char = $prefix.length();
@@ -97,12 +102,12 @@ public:
 			if ($charNeedle[0] == $mainString[$i])
 				return $i;
 		}
-		return -1;
+		throw "Index Out of Bond";
 	}
 	std::string toString() { return $mainString; }
 };
 
-String Int::toString() { return  std::to_string(Int::$mainInteger);}
+String Int::toString() { return  std::to_string(Int::$mainInteger); }
 String Double::toString() { return  std::to_string(Double::$maindouble); }
 
 class Array {
@@ -129,7 +134,8 @@ public:
 		push(t);
 		push(args...);
 	}
-	size_t length() { return $string.size() + $double.size() + $integer.size();}
+	size_t length() { return $string.size() + $double.size() + $integer.size(); }
+	// Push Value
 	template<>
 	void push(Int t) { intType(t); }
 	void push(int t) { intType(t); }
@@ -141,19 +147,29 @@ public:
 	void push(double t) { doubleType(t); }
 	void push(float t) { doubleType(t); }
 	void push(long double t) { doubleType(t); }
+	// Pop Value
+	void pop(size_t pos) {
+		try { $integer.erase(pos); }
+		catch (...) {
+			try { $string.erase(pos); }
+			catch (...) {
+				$double.erase(pos);
+			}
+		}
+	}
 	//Get Value
 	template<class $dataType>
 	$dataType getValue(size_t pos) {}
-	template<>	long getValue(size_t pos) { return ($integer.count(pos) != 0) ? $integer[pos].toLong(): -1;}
-	template<>	std::string getValue(size_t pos) { return ($string.count(pos) != 0) ? $string[pos].toString() : "Array out of Bond"; }
-	template<>	long double getValue(size_t pos) { return ($double.count(pos) != 0) ? $double[pos].toDouble() : -1; }
-	template<>	Int getValue(size_t pos) { return ($integer.count(pos) != 0) ? $integer[pos]: -1; }
-	template<>	String getValue(size_t pos) { return ($string.count(pos) != 0) ? $string[pos] : "Array out of Bond"; }
-	template<>	Double getValue(size_t pos) { return ($double.count(pos) != 0) ? $double[pos]: -1; }
+	template<>	long getValue(size_t pos) { return ($integer.count(pos) != 0) ? $integer[pos].toLong() : _NULL; }
+	template<>	std::string getValue(size_t pos) { return ($string.count(pos) != 0) ? $string[pos].toString() : "-1"; }
+	template<>	long double getValue(size_t pos) { return ($double.count(pos) != 0) ? $double[pos].toDouble() : _NULL; }
+	template<>	Int getValue(size_t pos) { return ($integer.count(pos) != 0) ? $integer[pos] : _NULL; }
+	template<>	String getValue(size_t pos) { return ($string.count(pos) != 0) ? $string[pos] : "-1"; }
+	template<>	Double getValue(size_t pos) { return ($double.count(pos) != 0) ? $double[pos] : _NULL; }
 	// Set Value
 	template<typename $type>
 	void setValue(size_t pos, $type $value) { }
-	template<> 	void setValue(size_t pos, long $value) {  $integer.at(pos) = $value; }
+	template<> 	void setValue(size_t pos, long $value) { $integer.at(pos) = $value; }
 	template<> 	void setValue(size_t pos, int $value) { $integer.at(pos) = $value; }
 	template<>	void setValue(size_t pos, Int $value) { $integer.at(pos) = $value; }
 	template<>	void setValue(size_t pos, Double $value) { $double.at(pos) = $value; }
@@ -163,7 +179,22 @@ public:
 	template<>	void setValue(size_t pos, std::string $value) { $string.at(pos) = $value; }
 	template<>	void setValue(size_t pos, String $value) { $string.at(pos) = $value; }
 	template<>	void setValue(size_t pos, const char* $value) { $string.at(pos) = $value; }
+
+	Array operator + (Array obj) {	
+		Array newArray = *this;
+		for (size_t i = 0; i < obj.length(); i++) {
+			try { newArray.push($key, obj.$integer.at(i)); }
+			catch (...) {
+				try { newArray.push($key, obj.$double.at(i)); }
+				catch (...) {
+					newArray.push($key, obj.$string.at(i));
+				};
+			};
+		}
+		return newArray;
+	}
 };
+
 namespace input {
 	Int integer_() {
 		int $input;

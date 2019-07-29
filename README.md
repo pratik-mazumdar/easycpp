@@ -1,11 +1,6 @@
 ## Overview<br>
 Creating dynamic array with multiple datatypes in it. Better and simpler than tupple.<br>
 Adding more functionality to primitive datatypes. As C++ grows old it need to be updated in a morden way.<br>
-[Array](https://github.com/LUCIF680/Nile#array)<br>
-[String](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
-[Int](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
-[Double](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
-[Namespace](https://github.com/LUCIF680/Nile/edit/master/README.md#array)<br>
 
 ### How to download 
 Header only Library. Download the file from [here](https://lucif680.github.io/Nile/nile.h).
@@ -13,9 +8,6 @@ Header only Library. Download the file from [here](https://lucif680.github.io/Ni
   *String<br>
   *Int<br>
   *Double<br>  
-  
-<section id="array">
-</sction>
   
 ## Multiple datatype array 
 #### Creating dynamic array with multiple datatypes in it
@@ -53,7 +45,7 @@ size_t array_size = y.length();
 std::cout << array_size; // Prints 3
 ~~~
 
-#### Push array
+#### Push an element array
 Return type is void
 ~~~
 Array y = {50,70,"ram"};
@@ -62,6 +54,26 @@ y.push(65.4);
 // y = {50,70,"ram","hello",65.4}
 ~~~
 Add an element at the end of the array.
+
+#### Pop an element array
+Return type is void
+~~~
+Array y = {50,70,"ram"};
+y.pop(0);
+// y = {70,"ram"}
+~~~
+Add an element at the end of the array.
+
+#### Add two array
+Return type is void
+~~~
+Array y = {50,70,"ram"};
+Array x = {36.1,12,"shyam"};
+Array z = x + y;
+// z = {50,70,"ram",36.1,12,"shyam"}
+~~~
+Add an element at the end of the array.
+
 
 ## String 
 In process to create it UTF-8 support.
