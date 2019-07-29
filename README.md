@@ -8,7 +8,12 @@ Header only Library. Download the file from [here](https://lucif680.github.io/Ni
   *String<br>
   *Int<br>
   *Double<br>  
-  
+
+### Header files used
+*iostream<br>
+*string<br>
+*map<br>
+
 ## Multiple datatype array 
 #### Creating dynamic array with multiple datatypes in it
 ~~~
