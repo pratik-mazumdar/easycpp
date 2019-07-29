@@ -20,7 +20,11 @@ Header only Library. Download the file from [here](https://lucif680.github.io/Ni
 Array y = {50,70,"ram"};
 ~~~
 #### Get the value by position
-Return Type should be set by the developer
+Return Type should be set by the developer.<br>
+Possible return types are<br>
+*long double for all double,float types<br>
+*long for int,long types<br>
+std::string for strings and const char*<br>
 ~~~
 std::string x = y.getValue<std::string>(2); // x now contains "ram"
 std::cout<< x;
