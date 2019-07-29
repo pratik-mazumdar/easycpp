@@ -6,7 +6,7 @@ Adding more functionality to primitive datatypes. As C++ grows old it need to be
 
        
 <details open>
-<summary>Array</summary>
+<summary>Array Methods</summary>
 <br>
 
    [Constructor](https://github.com/LUCIF680/Nile#multiple-datatype-array)<br>
@@ -15,7 +15,14 @@ Adding more functionality to primitive datatypes. As C++ grows old it need to be
    [length](https://github.com/LUCIF680/Nile#return-the-length-of-array)<br>
    [pop](https://github.com/LUCIF680/Nile#pop-an-element-array)<br>
    [push](https://github.com/LUCIF680/Nile#push-an-element-array)<br>
-   [concatenate](https://github.com/LUCIF680/Nile#add-two-array)<br>
+   [concatenate](https://github.com/LUCIF680/Nile#concatenate-two-array)<br>
+</details>
+<br>
+<details open>
+<summary>String Methods (In Work)</summary>
+<br>
+       
+   [length](https://github.com/LUCIF680/Nile#return-the-length-of-string)<br>
 </details>
        
 
