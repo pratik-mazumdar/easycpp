@@ -74,7 +74,7 @@ y.pop(0);
 Add an element at the end of the array.
 
 #### Add two array
-Return type is void
+Return type is Array
 ~~~
 Array y = {50,70,"ram"};
 Array x = {36.1,12,"shyam"};
