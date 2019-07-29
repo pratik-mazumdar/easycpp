@@ -5,7 +5,7 @@ Adding more functionality to primitive datatypes. As C++ grows old it need to be
 ## INDEX
 
        
-<details>
+<details open>
 <summary>Array</summary>
 <br>
 
