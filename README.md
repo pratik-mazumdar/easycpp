@@ -2,6 +2,23 @@
 Creating dynamic array with multiple datatypes in it. Better and simpler than tupple.<br>
 Adding more functionality to primitive datatypes. As C++ grows old it need to be updated in a morden way.<br>
 
+## INDEX
+
+       
+<details>
+<summary>Array</summary>
+<br>
+
+   [Constructor](https://github.com/LUCIF680/Nile#multiple-datatype-array)<br>
+   [getValue](https://github.com/LUCIF680/Nile#get-the-value-by-position)<br>
+   [setValue](https://github.com/LUCIF680/Nile#set-the-value-by-position)<br>
+   [length](https://github.com/LUCIF680/Nile#return-the-length-of-array)<br>
+   [pop](https://github.com/LUCIF680/Nile#pop-an-element-array)<br>
+   [push](https://github.com/LUCIF680/Nile#push-an-element-array)<br>
+   [concatenate](https://github.com/LUCIF680/Nile#add-two-array)<br>
+</details>
+       
+
 ### How to download 
 Header only Library. Download the file from [here](https://lucif680.github.io/Nile/nile.h).
 ## Non-Premitive DataTypes
@@ -31,7 +48,7 @@ std::cout<< x;
 
 //OR USE
 // Non - Premitive class
-String x =  x = y.getValue<String>(2); // x now contains "ram"
+String x = y.getValue<String>(2); // x now contains "ram"
 x.debug();
 ~~~
 You must give return type in getValue function. Argument is the position of array.
@@ -73,7 +90,7 @@ y.pop(0);
 ~~~
 Add an element at the end of the array.
 
-#### Add two array
+#### Concatenate two array
 Return type is Array
 ~~~
 Array y = {50,70,"ram"};
@@ -91,6 +108,6 @@ In process to create it UTF-8 support.
 Return type is size_t
 ~~~
 String y = "Hello World";
-size_t array_size = y.length();
-std::cout << array_size; // Prints 3
+size_t length = y.length();
+std::cout << length; // Prints 11
 ~~~
