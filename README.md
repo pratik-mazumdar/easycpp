@@ -1,6 +1,11 @@
 ## Overview<br>
 Creating dynamic array with multiple datatypes in it. Better and simpler than tupple.<br>
 Adding more functionality to primitive datatypes. As C++ grows old it need to be updated in a morden way.<br>
+We will be using namespace easycpp in our following documentation.
+
+```
+using namespace easycpp;
+```
 
 ## INDEX
 
@@ -9,20 +14,20 @@ Adding more functionality to primitive datatypes. As C++ grows old it need to be
 <summary>Array Methods</summary>
 <br>
 
-   [Constructor](https://github.com/LUCIF680/Nile#multiple-datatype-array)<br>
-   [getValue](https://github.com/LUCIF680/Nile#get-the-value-by-position)<br>
-   [setValue](https://github.com/LUCIF680/Nile#set-the-value-by-position)<br>
-   [length](https://github.com/LUCIF680/Nile#return-the-length-of-array)<br>
-   [pop](https://github.com/LUCIF680/Nile#pop-an-element-array)<br>
-   [push](https://github.com/LUCIF680/Nile#push-an-element-array)<br>
-   [concatenate](https://github.com/LUCIF680/Nile#concatenate-two-array)<br>
+   [Constructor](https://github.com/LUCIF680/easycpp#multiple-datatype-array)<br>
+   [getValue](https://github.com/LUCIF680/easycpp#get-the-value-by-position)<br>
+   [setValue](https://github.com/LUCIF680/easycpp#set-the-value-by-position)<br>
+   [length](https://github.com/LUCIF680/easycpp#return-the-length-of-array)<br>
+   [pop](https://github.com/LUCIF680/easycpp#pop-an-element-array)<br>
+   [push](https://github.com/LUCIF680/easycpp#push-an-element-array)<br>
+   [concatenate](https://github.com/LUCIF680/easycpp#concatenate-two-array)<br>
 </details>
 <br>
 <details open>
 <summary>String Methods (In Work)</summary>
 <br>
        
-   [length](https://github.com/LUCIF680/Nile#return-the-length-of-string)<br>
+   [length](https://github.com/LUCIF680/easycpp#return-the-length-of-string)<br>
 </details>
        
 
