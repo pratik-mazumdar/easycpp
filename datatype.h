@@ -3,6 +3,13 @@
 #include <iostream>
 namespace easycpp {
 	class String;
+        class Boolean{
+                bool mainBool = true;
+            public:
+                Boolean(bool x){mainBool = x;}
+                void debug() { std::cout << mainBool; }
+                String to_string();
+        };
 	class Double {
 		long double maindouble = 0;
 	public:
@@ -53,7 +60,7 @@ namespace easycpp {
 		bool operator < (Int const& obj) { return (obj.mainInteger < mainInteger) ? true : false; }
 		bool operator % (Int const& obj) { return (obj.mainInteger % mainInteger) ? true : false; }
 	};
-	class String {
+        class String {
 	private: std::string mainString;
 	public:
 		String() {}
@@ -61,7 +68,7 @@ namespace easycpp {
 		String(dataType charString) { mainString = charString; }
 	public:
 		Int parse_int() { return std::stoi(mainString); }
-		bool isInt() {
+                Boolean is_int() {
 			try {
 				std::stoi(mainString);
 				return true;
@@ -69,13 +76,13 @@ namespace easycpp {
 			catch (...) { return false; }
 		}
 		String operator + (String const& obj) { return  mainString + obj.mainString; }
-		bool operator == (String const& obj) { return mainString == obj.mainString; }
-		String operator + (Int obj) { return obj.to_string() + this->mainString; }
+                bool operator == (String const& obj) { return mainString == obj.mainString; }
+                String operator + (Int obj) { return obj.to_string() + this->mainString; }
 		String operator + (Double obj) { return obj.to_string() + this->mainString; }
-		bool compare_ignore_case(String obj) {
+                bool compare_ignore_case(String obj) {
 
-		}
-		size_t length() {
+                }
+                size_t length() {
 			int count = 0;
 			while (mainString[count] != '\0') { count++; }
 			return count;
@@ -85,8 +92,8 @@ namespace easycpp {
 			std::cout << someUString.toLower();
 		}*/
 		void debug() { std::cout << mainString; }
-		bool starts_with(String prefix) {
-			size_t number_char = prefix.length();
+                Boolean starts_with(String prefix) {
+                        size_t number_char = prefix.length();
 			std::string prefixchar = prefix.to_string();
 			for (rsize_t i = 0; i < number_char; i++) {
 				if (mainString[i] != prefixchar[i])
@@ -94,7 +101,7 @@ namespace easycpp {
 			}
 			return true;
 		}
-		bool find(String needle) {
+                Boolean find(String needle) {
 			std::string charNeedle = needle.to_string();
 			for (size_t i = 0; i < mainString.length(); i++) {
 				if (charNeedle[0] == mainString[i])
@@ -102,7 +109,7 @@ namespace easycpp {
 			}
 			return false;
 		}
-		size_t find_position(String needle) {
+                Int find_position(String needle) {
 			std::string charNeedle = needle.to_string();
 			for (size_t i = 0; i < mainString.length(); i++) {
 				if (charNeedle[0] == mainString[i])
@@ -119,12 +126,14 @@ namespace easycpp {
 			}
 		}*/
 	};
-
+        String Boolean::to_string(){
+            return mainBool ? "true" : "false";
+        }
 	String Int::to_string() { return  std::to_string(Int::mainInteger); }
 	String Int::operator + (String  obj) { return this->to_string() + obj; }
 	String Double::to_string() { return  std::to_string(Double::maindouble); }
 	String Double::operator + (String  obj) { return this->to_string() + obj; }
-	template <class type>
+        template <class type>
 	void println(type x) { std::cout << x << "\n"; }
 	template<>
 	void println(Int x) { x.debug(); std::cout << "\n"; }
