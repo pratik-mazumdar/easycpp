@@ -33,7 +33,7 @@ using namespace easycpp;
        
 
 ### How to download 
-Header only Library. Download the file from [here](https://lucif680.github.io/Nile/nile.h).
+Header only Library. Clone is repo.
 ## Non-Premitive DataTypes
   *String<br>
   *Int<br>
