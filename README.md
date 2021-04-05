@@ -40,9 +40,9 @@ Header only Library. Clone is repo.
   *Double<br>  
 
 ### Header files used
-*iostream<br>
-*string<br>
-*map<br>
+* iostream<br>
+* string<br>
+* map<br>
 
 ## Tupple
 #### Creating tupple
@@ -56,7 +56,7 @@ long double for all double,float types<br>
 long for int,long types<br>
 std::string for strings and const char*<br>
 ~~~
-std::string x = y.getValue<std::string>(2); // x now contains "ram"
+std::string x = y.get_value<std::string>(2); // x now contains "ram"
 std::cout<< x;
 
 //OR USE
